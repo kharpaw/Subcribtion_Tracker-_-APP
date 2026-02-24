@@ -6,6 +6,7 @@ import authRouter from "./routes/auth_routus.js";
 import subcribeRouter from "./routes/sub.routues.js";
 import connectToDatabase from "./DATABASE/mongeDB.js";
 import errorMiddleware from "./middlewares/error.middleware.js";
+import arcjetMiddleWare from "./middlewares/arcjet.middle.js";
 
 
 const app = express();
@@ -13,6 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(arcjetMiddleWare)
 
 // Routes
 app.use("/api/v1/auth", authRouter);

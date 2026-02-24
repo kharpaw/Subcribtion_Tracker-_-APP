@@ -1,5 +1,5 @@
 import arcjet, {shield, detectBot, tokenBucket} from "@arcjet/node";
-import { ARCJET_KEY } from "./env";
+import { ARCJET_KEY } from "../config/env.js";
 
 
 const aj = arcjet({
@@ -25,4 +25,7 @@ const aj = arcjet({
         capacity: 10, // Bucket capacity of 10 tokens
       }),
     ],
-  });
+});
+  
+
+export default aj;
